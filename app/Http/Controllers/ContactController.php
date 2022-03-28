@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Carbon\Carbon;
+use Log;
 
 class ContactController extends Controller
 {
@@ -48,8 +49,6 @@ class ContactController extends Controller
     {
         $inputs = $request->input();
         unset($inputs['_token']);
-        $request->session()->put('inputs',$inputs);
-
         $query = Contact::query();
         if($request->fullname) {
             $query->where('fullname', 'like', "%{$request->fullname}%");
@@ -83,6 +82,47 @@ class ContactController extends Controller
     public function delete(Request $request)
     {
         Contact::find($request->id)->delete();
-        return redirect()->route("management", ['page' => $request->page])->withInput($request->inputs);
+        $inputs = $request->inputs;
+        if(!$inputs) {
+            return redirect()->route('management', ['page' => $request->page]);
+        }
+        $query = Contact::query();
+        if(!isset($inputs['fullname'])) {
+            $inputs['fullname'] = NULL;
+        } else if($inputs['fullname']) {
+            $query->where('fullname', 'like', "%{$inputs['fullname']}%");
+        }
+        if(!isset($inputs['gender'])) {
+            $inputs['gender'] = '全部';
+            Log::Debug('全部');
+        } else if($inputs['gender'] === '男性') {
+            $query->where('gender', 1);
+            Log::Debug('男性');
+        } else if($inputs['gender'] === '女性') {
+            $query->where('gender', 2);
+            Log::Debug('女性');
+        }
+        if(!isset($inputs['email'])) {
+            $inputs['email'] = NULL;
+        } else if($inputs['email']) {
+            $query->where('email', 'like', "%{$inputs['email']}%");
+        }
+        if(!isset($inputs['created_at_from'])) {
+            $inputs['created_at_from'] = NULL;
+        }
+        if(!isset($inputs['created_at_to'])) {
+            $inputs['created_at_to'] = NULL;
+        }
+        if($inputs['created_at_from'] && $inputs['created_at_to']) {
+            $query->where('created_at', '>=',  Carbon::parse($inputs['created_at_from'])->startOfDay())->where('created_at', '<=',  Carbon::parse($inputs['created_at_to'])->endOfDay());
+        } else if($inputs['created_at_from'] && !$inputs['created_at_to']) {
+            $query->where('created_at', '>=',  Carbon::parse($inputs['created_at_from'])->startOfDay());
+        } else if(!$inputs['created_at_from'] && $inputs['created_at_to']) {
+            $query->where('created_at', '<=',  Carbon::parse($inputs['created_at_to'])->endOfDay());
+        }
+
+        $items = $query->paginate(10)->withQueryString();
+        return view('management', ['items' => $items, 'inputs' => $inputs, 'page' => $request->page]);
     }
+
 }

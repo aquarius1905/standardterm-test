@@ -180,6 +180,9 @@
 .search-form {
     padding: 20px;
 }
+.search-name-gender-wrapper {
+    justify-content: left;
+}
 .name-gender-container {
     display: flex;
 }
@@ -201,6 +204,9 @@
     height: 50px;
     font-size: 18px;
     width: 20%;
+}
+.search-item-name-input {
+    width: auto;
 }
 .search-item-date-lbl {
     width: 3%;

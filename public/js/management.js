@@ -19,3 +19,14 @@
     document.getElementById("created_at_from").setAttribute("max", today);
     document.getElementById("created_at_to").setAttribute("max", today);
   }
+{
+  function confirmDeletion(event)
+  {
+    if (confirm('削除しますか？')) {
+      form.submit();
+    } else {
+      event.preventDefault();
+    }
+  }
+  
+}

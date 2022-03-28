@@ -15,15 +15,15 @@
     <div>
       <div class="search-item">
         <label class="search-item-lbl">お名前</label>
-        <input type="text" name="fullname" class="search-item-input" id="name" value="@if(isset($inputs) && isset($inputs['fullname']) ){{ $inputs['fullname'] }}@endif">
+        <input type="text" name="fullname" class="search-item-input search-item-name-input" id="name" value="@if(isset($inputs) && isset($inputs['fullname'])){{ $inputs['fullname'] }}@endif">
       </div>
       <div class="search-item">
         <label class="search-item-lbl">性別</label>
-        <input type="radio" name="gender" id="all" class="radio" value="全て" "@if(!isset($inputs)) checked @elseif(isset($inputs['gender']) && ($inputs['gender'] == '全て')) checked @endif">
+        <input type="radio" name="gender" id="all" class="radio" value="全て" "@if(!isset($inputs)) checked @elseif(isset($inputs['gender']) && ($inputs['gender'] == '全て')) checked @elseif (old('gender') == '全て') checked @endif">
         <label for="all" class="gender-lbl">全て</label>
-        <input type="radio" name="gender" id="mail" class="radio" value="男性" "@if(isset($inputs) && isset($inputs['gender']) && ($inputs['gender'] == '男性')) checked @endif">
+        <input type="radio" name="gender" id="mail" class="radio" value="男性" "@if(isset($inputs) && isset($inputs['gender']) && ($inputs['gender'] == '男性')) checked @elseif (old('gender') == '男性') checked @endif">
         <label for="mail" class="gender-lbl">男性</label>
-        <input type="radio" name="gender" id="femail" class="radio" value="女性" "@if(isset($inputs) && isset($inputs['gender']) && ($inputs['gender'] == '女性')) checked @endif">
+        <input type="radio" name="gender" id="femail" class="radio" value="女性" "@if(isset($inputs) && isset($inputs['gender']) && ($inputs['gender'] == '女性')) checked @elseif (old('gender') == '女性') checked @endif">
         <label for="femail" class="gender-lbl">女性</label>
       </div>
       <div class="search-item">
@@ -75,10 +75,10 @@
         <p class="opinion-full">{{$item->opinion}}</p>
       </td>
       <td>
-        <form action="{{ route('delete', ['id' => $item->id, 'page' => $items->currentPage(), 'inputs' => $inputs ]) }}" method="post">
-            @csrf
-            <button class="delete-btn">削除</button>
-        </form>
+        <form action="{{ route('delete', ['id' => $item->id, 'page' => $items->currentPage(), 'inputs' => $inputs ]) }}" method="post" onsubmit="confirmDeletion(event)">
+          @csrf
+          <button type="submit" class="delete-btn">削除</button>
+      </form>
       </td>
     </tr>
     @endforeach
