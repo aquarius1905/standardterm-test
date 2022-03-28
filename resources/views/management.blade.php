@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="btn-wrapper">
-      <button type="submit" class="btn">検索</button>
+      <button type="submit" class="search-btn">検索</button>
       <a href="/management" class="reset-btn">リセット</a>
     </div>
   </form>
