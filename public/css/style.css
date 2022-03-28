@@ -1,3 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+*::before {
+    box-sizing: border-box;
+}
+*::after {
+    box-sizing: border-box;
+}
+body {
+    font-size: 18px;
+}
 .ttl {
     font-size: 32px;
     text-align: center;
@@ -27,27 +39,45 @@
 .form-item-lbl {
     width: 20%;
     font-weight: bold;
-    font-size: 18px;
 }
 .confirm-item-lbl {
     width: 30%;
     font-weight: bold;
-    font-size: 18px;
 }
 .input-example {
     color: #aaa;
 }
-.flex {
+.form-item-radio {
     display: flex;
-    justify-content: left;
 }
-.radio {
+.radio-input {
+    appearance: none;
+    position: absolute;
+}
+.gender-lbl::before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid #aaa;
     width: 50px;
     height: 50px;
+    margin-right: 10px;
+}
+.radio-input:checked + .gender-lbl::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    display: block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: 000;
 }
 .gender-lbl {
-    margin: 0 20px 0 10px;
-    font-size: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 30px 0 10px;
 }
 .form-item-name-lbl {
     width: 10%;
@@ -56,7 +86,7 @@
     color: #555;
 }
 .form-item-lbl-required {
-    color: #f00;
+    color: tomato;
 }
 .form-item-input {
     border: 2px solid #ddd;
@@ -67,16 +97,8 @@
     width: 100%;
 }
 .form-item-name-input {
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    padding: 0 10px;
-    height: 48px;
-    font-size: 18px;
     margin-right: 10px;
     width: 90%;
-}
-.form-item-radio {
-    font-size: 18px;
 }
 .postcode-lbl {
     font-weight: bold;
@@ -99,7 +121,7 @@
     display: block;
     background: #000;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -124,15 +146,9 @@
     width: 60%;
     text-align: center;
 }
-.example-wrapper {
-    display: flex;
-    justify-content: space-around;
-}
-.form-item-content {
+.confirm-item-content {
     width: 90%;
-    font-size: 18px;
     width: 100%;
-    font-size: 18px;
 }
 .confirm-item {
     padding: 40px 0;
@@ -149,7 +165,6 @@
     background-color: transparent;
     text-decoration: underline;
 }
-/* お問い合わせ完了画面 */
 .complete-form {
     width: 40%;
     margin: 0 auto;
@@ -171,7 +186,6 @@
     font-size: 20px;
     text-decoration: none;
 }
-/* 管理システム */
 .search {
     width: 90%;
     margin: 0 auto;
@@ -194,8 +208,11 @@
 }
 .search-item-lbl {
     font-weight: bold;
-    font-size: 18px;
     width: 15%;
+}
+.search-item-gender-lbl {
+    margin-left: 40px;
+    width: 5%;
 }
 .search-item-input {
     border: 1px solid #999;
@@ -205,34 +222,17 @@
     font-size: 18px;
     width: 20%;
 }
-.search-item-name-input {
-    width: auto;
-}
-.search-item-date-lbl {
+.search-item-term-lbl {
     width: 3%;
     font-weight: bold;
-    font-size: 18px;
     color: #555;
     text-align: center;
-}
-.search-item-date-input {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 0 10px;
-    height: 50px;
-    font-size: 18px;
-    width: 20%;
-}
-.search-item-radio {
-    width: 100%;
-    margin-left: 40px;
-    font-size: 18px;
 }
 .reset-btn {
     display: inline-block;
     text-decoration: underline;
     font-size: 18px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .management-form {
     width: 90%;
@@ -273,7 +273,6 @@
     display: block;
     background: #000;
     color: #fff;
-    font-size: 18px;
     cursor: pointer;
 }
 .opinion-td {

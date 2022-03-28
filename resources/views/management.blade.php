@@ -15,21 +15,19 @@
     <div>
       <div class="search-item">
         <label class="search-item-lbl">お名前</label>
-        <input type="text" name="fullname" class="search-item-input search-item-name-input" id="name" value="@if(isset($inputs) && isset($inputs['fullname'])){{ $inputs['fullname'] }}@endif">
-      </div>
-      <div class="search-item">
-        <label class="search-item-lbl">性別</label>
-        <input type="radio" name="gender" id="all" class="radio" value="全て" "@if(!isset($inputs)) checked @elseif(isset($inputs['gender']) && ($inputs['gender'] == '全て')) checked @elseif (old('gender') == '全て') checked @endif">
+        <input type="text" name="fullname" class="search-item-input" id="name" value="@if(isset($inputs) && isset($inputs['fullname'])){{ $inputs['fullname'] }}@endif">
+        <label class="search-item-lbl search-item-gender-lbl">性別</label>
+        <input type="radio" name="gender" id="all" class="radio-input" value="全て" "@if(!isset($inputs)) checked @elseif(isset($inputs['gender']) && ($inputs['gender'] == '全て')) checked @elseif (old('gender') == '全て') checked @endif">
         <label for="all" class="gender-lbl">全て</label>
-        <input type="radio" name="gender" id="mail" class="radio" value="男性" "@if(isset($inputs) && isset($inputs['gender']) && ($inputs['gender'] == '男性')) checked @elseif (old('gender') == '男性') checked @endif">
+        <input type="radio" name="gender" id="mail" class="radio-input" value="男性" "@if(isset($inputs) && isset($inputs['gender']) && ($inputs['gender'] == '男性')) checked @elseif (old('gender') == '男性') checked @endif">
         <label for="mail" class="gender-lbl">男性</label>
-        <input type="radio" name="gender" id="femail" class="radio" value="女性" "@if(isset($inputs) && isset($inputs['gender']) && ($inputs['gender'] == '女性')) checked @elseif (old('gender') == '女性') checked @endif">
+        <input type="radio" name="gender" id="femail" class="radio-input" value="女性" "@if(isset($inputs) && isset($inputs['gender']) && ($inputs['gender'] == '女性')) checked @elseif (old('gender') == '女性') checked @endif">
         <label for="femail" class="gender-lbl">女性</label>
       </div>
       <div class="search-item">
         <label class="search-item-lbl">登録日</label>
         <input type="date" name="created_at_from" class="search-item-input" id="created_at_from" value="@if(isset($inputs) && isset($inputs['created_at_from'])){{ $inputs['created_at_from'] }}@endif" min="1900-01-01">
-        <label class="search-item-date-lbl">～</label>
+        <label class="search-item-term-lbl">～</label>
         <input type="date" name="created_at_to" class="search-item-input" id="created_at_to" value="@if(isset($inputs) && isset($inputs['created_at_to'])){{ $inputs['created_at_to'] }}@endif" min="1900-01-01">
       </div>
       <div class="search-item">

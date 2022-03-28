@@ -9,7 +9,7 @@
     <div class="form-item">
         <label class="form-item-lbl">お名前<span class="form-item-lbl-required"> ※</span></label>
         <div class="input-name-wrapper">
-          <input type="text" name="lastname" class="form-item-name-input" id="lastname" value="{{old('lastname')}}">
+          <input type="text" name="lastname" class="form-item-input form-item-name-input" id="lastname" value="{{old('lastname')}}">
           <div class="lbl-name-wrapper">
             <label class="input-example">例）山田</label>
             <label class="error" id="lastname-error"></label>
@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="input-name-wrapper">
-          <input type="text" name="firstname" class="form-item-name-input" id="firstname" value="{{old('firstname')}}">
+          <input type="text" name="firstname" class="form-item-input form-item-name-input" id="firstname" value="{{old('firstname')}}">
           <div class="lbl-name-wrapper">
             <label class="input-example">例）太郎</label>
             <label class="error" id="firstname-error"></label>
@@ -31,8 +31,8 @@
     <div class="form-item">
       <p class="form-item-lbl">性別<span class="form-item-lbl-required"> ※</span></p>
       <div class="form-item-radio">
-        <input type="radio" name="gender" id="mail" class="radio" value="男性" {{ old('gender', '男性') == '男性' ? 'checked' : '' }}><label for="mail" class="gender-lbl">男性</label>
-        <input type="radio" name="gender" id="femail" class="radio" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}><label for="femail" class="gender-lbl">女性</label>
+        <input type="radio" name="gender" id="mail" class="radio-input" value="男性" {{ old('gender', '男性') == '男性' ? 'checked' : '' }}><label for="mail" class="gender-lbl">男性</label>
+        <input type="radio" name="gender" id="femail" class="radio-input" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}><label for="femail" class="gender-lbl">女性</label>
       </div>
     </div>
     @error('gender')<p class="error">{{ $message }}</p>@enderror

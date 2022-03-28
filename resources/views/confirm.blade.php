@@ -6,38 +6,38 @@
   @csrf
   <div class="confirm-item">
     <p class="confirm-item-lbl">お名前</p>
-    <p class="form-item-content">{{ $inputs['lastname'] }}　{{ $inputs['firstname'] }}</p>
+    <p class="confirm-item-content">{{ $inputs['lastname'] }}　{{ $inputs['firstname'] }}</p>
     <input type="hidden" name="lastname" value="{{ $inputs['lastname'] }}" >
     <input type="hidden" name="firstname" value="{{ $inputs['firstname'] }}" >
   </div>
   <div class="confirm-item">
     <p class="confirm-item-lbl">性別</p>
-    <p class="form-item-content">{{ $inputs['gender'] }}</p>
+    <p class="confirm-item-content">{{ $inputs['gender'] }}</p>
     <input type="hidden" name="gender" value="{{ $inputs['gender'] === '男性' ? 1 : 2 }}">
   </div>
   <div class="confirm-item">
     <p class="confirm-item-lbl">メールアドレス</p>
-    <p class="form-item-content">{{ $inputs['email'] }}</p>
+    <p class="confirm-item-content">{{ $inputs['email'] }}</p>
     <input type="hidden" name="email" value="{{ $inputs['email'] }}">
   </div>
   <div class="confirm-item">
     <p class="confirm-item-lbl">郵便番号</p>
-    <p class="form-item-content">{{ $inputs['postcode'] }}</p>
+    <p class="confirm-item-content">{{ $inputs['postcode'] }}</p>
     <input type="hidden" name="postcode" value="{{ $inputs['postcode'] }}">
   </div>
   <div class="confirm-item">
     <p class="confirm-item-lbl">住所</p>
-    <p class="form-item-content">{{ $inputs['address'] }}</p>
+    <p class="confirm-item-content">{{ $inputs['address'] }}</p>
     <input type="hidden" name="address" value="{{ $inputs['address'] }}">
   </div>
   <div class="confirm-item">
     <p class="confirm-item-lbl">建物名</p>
-    <p class="form-item-content">{{ $inputs['building_name'] }}</p>
+    <p class="confirm-item-content">{{ $inputs['building_name'] }}</p>
     <input type="hidden" name="building_name" value="{{ $inputs['building_name'] }}">
   </div>
   <div class="confirm-item">
     <p class="confirm-item-lbl">ご意見</p>
-    <p class="form-item-content">{{ $inputs['opinion'] }}</p>
+    <p class="confirm-item-content">{{ $inputs['opinion'] }}</p>
     <input type="hidden" name="opinion" value="{{ $inputs['opinion'] }}">
   </div>
   </div>

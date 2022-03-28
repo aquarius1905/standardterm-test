@@ -4,7 +4,9 @@
 <div class="complete-form">
   <p class="complete-content">ご意見いただきありがとうございました。</p>
   <div class="btn-wrapper">
-    <a href="{{ route('index') }}" class="bk-btn">トップページへ</a>
+    <form action="{{ route('index') }}" method="get">
+      <button class="btn">トップページへ</button>
+    </form>
   </div>
 </div>
 @endsection
