@@ -70,7 +70,7 @@ Remove the default font size and weight for headings.
 */
 
 h1 {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 h2,
@@ -568,6 +568,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+svg.w-5.h-5 {
+    width: 30px;
+    height: 30px;
 }
 .hover\:text-gray-500:hover {
     --tw-text-opacity: 1;

@@ -3,27 +3,21 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastname = document.getElementById('lastname');
     lastname.oninput = function () {
       let error = document.getElementById('lastname-error');
-      error.innerHTML = '';
-      if (this.value == '') {
-        error.innerHTML = '姓は入力必須です';
-      }
+      error.innerHTML = (this.value == '') ? '姓は入力必須です' : '';
     }
   }
   {//名
     let firstname = document.getElementById('firstname');
     firstname.oninput = function () {
       let error = document.getElementById('firstname-error');
-      error.innerHTML = '';
-      if (this.value == '') {
-        error.innerHTML = '名は入力必須です';
-      }
+      error.innerHTML = (this.value == '') ? '名は入力必須です' : '';
     }
   }
   {//メールアドレス
     let email = document.getElementById('email');
     email.oninput = function () {
       let error = document.getElementById('email-error');
-      error.innerHTML = ''  
+      error.innerHTML = '';
       if (this.value == '') {
         error.innerHTML = 'メールアドレスは入力必須です';
       } else if (!this.value.match(/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/)) {
@@ -64,10 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let address = document.getElementById('address');
     address.oninput = function () {
       let error = document.getElementById('address-error');
-      error.innerHTML = '';
-      if (this.value == '') {
-        error.innerHTML = '住所は入力必須です';
-      }
+      error.innerHTML = (this.value == '') ? '住所は入力必須です' : '';
     }
   }
   {//ご意見

@@ -40,16 +40,12 @@ body {
 .input-name-wrapper {
     width: 40%;
 }
-.form-item-lbl-wrapper {
-    align-items: center;
-}
 .form-item-lbl {
     width: 20%;
     font-weight: bold;
 }
-.confirm-item-lbl {
-    width: 30%;
-    font-weight: bold;
+.form-item-lbl-required {
+    color: tomato;
 }
 .input-example {
     color: #aaa;
@@ -91,9 +87,6 @@ body {
     margin-left: 20px;
     font-weight: bold;
     color: #555;
-}
-.form-item-lbl-required {
-    color: tomato;
 }
 .form-item-input {
     border: 2px solid #ddd;
@@ -154,15 +147,19 @@ body {
     width: 60%;
     text-align: center;
 }
-.confirm-item-content {
-    width: 90%;
-    width: 100%;
-}
 .confirm-item {
     padding: 40px 0;
     width: 100%;
     display: flex;
     align-items: center;
+}
+.confirm-item-lbl {
+    width: 30%;
+    font-weight: bold;
+}
+.confirm-item-content {
+    width: 90%;
+    width: 100%;
 }
 .clear-btn,
 .modify-btn {
@@ -201,12 +198,6 @@ body {
 }
 .search-form {
     padding: 20px;
-}
-.search-name-gender-wrapper {
-    justify-content: left;
-}
-.name-gender-container {
-    display: flex;
 }
 .search-item {
     padding: 15px 0;
@@ -278,7 +269,7 @@ body {
 .management-table td {
     height: 50px;
     line-height: 50px;
-    padding: 0 30px;
+    padding: 20px 30px;
 }
 .id-td {
     width: 5%;
@@ -288,7 +279,7 @@ body {
 }
 .delete-btn {
     border-radius: 6px;
-    margin: 30px auto 0;
+    margin: 0 auto;
     width: 80px;
     display: block;
     background: #000;
@@ -323,6 +314,6 @@ body {
 }
 .opinion-short:hover + .opinion-full {
     display: inline-block;
-    top: 30px;
+    top: 60px;
     left: 0px;
 }

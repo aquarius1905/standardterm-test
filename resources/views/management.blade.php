@@ -1,12 +1,6 @@
 @extends('layouts.default')
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <script src="{{ asset('js/management.js') }}"></script>
-<style>
-  svg.w-5.h-5 {  /*paginateメソッドの矢印の大きさ調整のために追加*/
-    width: 30px;
-    height: 30px;
-  }
-</style>
 @section('title', '管理システム')
 @section('content')
 <div class="search">
