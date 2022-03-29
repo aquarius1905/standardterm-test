@@ -38,7 +38,7 @@ class ContactController extends Controller
             $contact = new Contact;
             unset($inputs['_token']);
             $contact->fill($inputs)->save();
-            return view('complete');
+            return view('thanks');
         }
     }
 

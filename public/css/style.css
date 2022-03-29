@@ -172,12 +172,12 @@ body {
     background-color: transparent;
     text-decoration: underline;
 }
-.complete-form {
+.thanks-form {
     width: 40%;
     margin: 0 auto;
     margin-top: 100px;
 }
-.complete-content {
+.thanks-content {
     line-height: 70px;
     font-size: 20px;
     text-align: center;
