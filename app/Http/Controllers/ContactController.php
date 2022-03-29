@@ -30,9 +30,7 @@ class ContactController extends Controller
             return redirect()
                 ->route('index')
                 ->withInput($inputs);
-        } 
-        else
-        {
+        } else {//登録
             $fullname = $request->lastname.'　'.$request->firstname;
             $request->merge(['fullname' => $fullname]);
             $inputs = $request->except('action');
