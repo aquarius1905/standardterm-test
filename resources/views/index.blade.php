@@ -25,11 +25,9 @@
           </div>
         </div>
     </div>
-    <div>
-  </div>
   <div>
-    <div class="form-item">
-      <p class="form-item-lbl">性別<span class="form-item-lbl-required"> ※</span></p>
+    <div class="form-item form-gender-item">
+      <label class="form-item-lbl">性別<span class="form-item-lbl-required"> ※</span></label>
       <div class="form-item-radio">
         <input type="radio" name="gender" id="mail" class="radio-input" value="男性" {{ old('gender', '男性') == '男性' ? 'checked' : '' }}><label for="mail" class="gender-lbl">男性</label>
         <input type="radio" name="gender" id="femail" class="radio-input" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}><label for="femail" class="gender-lbl">女性</label>
@@ -39,7 +37,7 @@
   </div>
   <div>
     <div class="form-item">
-      <p class="form-item-lbl">メールアドレス<span class="form-item-lbl-required"> ※</span></p>
+      <label class="form-item-lbl">メールアドレス<span class="form-item-lbl-required"> ※</span></label>
       <div class="input-wrapper">
         <input type="email" name="email" class="form-item-input" id="email" value="{{old('email')}}">
         <div class="lbl-wrapper">
@@ -52,7 +50,7 @@
   </div>
   <div>
     <div class="form-item">
-      <p class="form-item-lbl">郵便番号<span class="form-item-lbl-required"> ※</span></p>
+      <label class="form-item-lbl">郵便番号<span class="form-item-lbl-required"> ※</span></label>
       <div class="input-wrapper">
         <div class="postcode-wrapper">
           <label for="postcode" class="postcode-lbl">&#12306;</label>
@@ -68,7 +66,7 @@
   </div>
   <div>
     <div class="form-item">
-      <p class="form-item-lbl">住所<span class="form-item-lbl-required"> ※</span></p>
+      <label class="form-item-lbl">住所<span class="form-item-lbl-required"> ※</span></label>
       <div class="input-wrapper">
         <input type="text" name="address" class="form-item-input" id="address" value="{{old('address')}}">
         <div class="lbl-wrapper">
@@ -81,19 +79,18 @@
   </div>
   <div>
     <div class="form-item">
-      <p class="form-item-lbl">建物名</p>
+      <label class="form-item-lbl">建物名</label>
       <div class="input-wrapper">
         <input type="text" name="building_name" class="form-item-input" id="building_name" value="{{old('building_name')}}">
         <div class="lbl-wrapper">
           <label class="input-example">例）千駄ヶ谷マンション101</label>
-          @error('building_name')<label class="error">{{ $message }}</label>@enderror
         </div>
       </div>
     </div>
   </div>
   <div>
-    <div class="form-item">
-      <p class="form-item-lbl">ご意見<span class="form-item-lbl-required"> ※</span></p>
+    <div class="form-item form-opinion-item">
+      <label class="form-item-lbl">ご意見<span class="form-item-lbl-required"> ※</span></label>
       <div class="input-wrapper">
         <textarea name="opinion" class="form-item-textarea" id="opinion">{{ old('opinion') }}</textarea>
         <div class="lbl-wrapper">

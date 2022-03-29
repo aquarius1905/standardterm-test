@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Carbon\Carbon;
-use Log;
 
 class ContactController extends Controller
 {
@@ -94,13 +93,10 @@ class ContactController extends Controller
         }
         if(!isset($inputs['gender'])) {
             $inputs['gender'] = '全部';
-            Log::Debug('全部');
         } else if($inputs['gender'] === '男性') {
             $query->where('gender', 1);
-            Log::Debug('男性');
         } else if($inputs['gender'] === '女性') {
             $query->where('gender', 2);
-            Log::Debug('女性');
         }
         if(!isset($inputs['email'])) {
             $inputs['email'] = NULL;

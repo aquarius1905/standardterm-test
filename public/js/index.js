@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
     postcode.oninput = function () {
       //全角数字を半角に変換
       this.value = convertToHalfwidthNumber(this.value);
-      console.log(this.value);
       let error = document.getElementById('postcode-error');
       error.innerHTML = '';
       if (this.value.match(/^\d{3}-\d{4}$/)) {

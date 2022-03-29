@@ -13,7 +13,6 @@
                         {{ $paginator->count() }}
                     @endif
                     {!! __('件') !!}
-                    
                 </p>
             </div>
 

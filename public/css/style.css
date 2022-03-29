@@ -24,6 +24,10 @@ body {
     padding: 20px 0;
     width: 100%;
     display: flex;
+    align-items: baseline;
+}
+.form-gender-item,
+.form-opinion-item {
     align-items: center;
 }
 .input-wrapper {
@@ -35,6 +39,9 @@ body {
 }
 .input-name-wrapper {
     width: 40%;
+}
+.form-item-lbl-wrapper {
+    align-items: center;
 }
 .form-item-lbl {
     width: 20%;
@@ -66,11 +73,11 @@ body {
 .radio-input:checked + .gender-lbl::after {
     content: "";
     position: absolute;
-    left: 20px;
+    left: calc(25px - 7.5px);
     display: block;
     border-radius: 50%;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background-color: 000;
 }
 .gender-lbl {
@@ -127,10 +134,11 @@ body {
 }
 .lbl-wrapper {
     display: flex;
-    padding: 10px;
+    margin: 15px 0 0 15px;
+    width: 100%;
 }
 .lbl-name-wrapper {
-    width: 90%;
+    width: 100%;
     display: flex;
     padding: 10px;
 }
@@ -296,7 +304,6 @@ body {
     display: none;
     position: absolute;
     padding: 10px;
-    font-size: 16px;
     line-height: 1.6em;
     color: #fff;
     border-radius: 5px;
