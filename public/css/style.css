@@ -159,7 +159,9 @@ body {
 }
 .confirm-item-content {
     width: 90%;
-    width: 100%;
+}
+.confirm-opinion {
+    line-height: 30px;
 }
 .clear-btn,
 .modify-btn {
@@ -197,7 +199,7 @@ body {
     border: 1px solid #000;
 }
 .search-form {
-    padding: 20px;
+    padding: 40px;
 }
 .search-item {
     padding: 15px 0;
@@ -252,6 +254,7 @@ body {
 .pagination-wrapper {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 .management-table {
     width: 100%;

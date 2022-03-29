@@ -37,7 +37,7 @@
   </div>
   <div class="confirm-item">
     <p class="confirm-item-lbl">ご意見</p>
-    <p class="confirm-item-content">{{ $inputs['opinion'] }}</p>
+    <p class="confirm-item-content confirm-opinion">{{ $inputs['opinion'] }}</p>
     <input type="hidden" name="opinion" value="{{ $inputs['opinion'] }}">
   </div>
   </div>
