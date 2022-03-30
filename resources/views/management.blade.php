@@ -67,7 +67,7 @@
         <p class="opinion-full">{{$item->opinion}}</p>
       </td>
       <td>
-        <form action="{{ route('delete', ['id' => $item->id, 'page' => $items->currentPage(), 'inputs' => $inputs ]) }}" method="post" onsubmit="confirmDeletion(event)">
+        <form action="{{ route('delete', ['id' => $item->id, 'page' => ($items->count() > 1 || ($items->count() === 1 && $items->currentPage() === 1)) ? $items->currentPage() : $items->currentPage() - 1, 'inputs' => $inputs ]) }}" method="post" onsubmit="confirmDeletion(event)">
           @csrf
           <button type="submit" class="delete-btn">削除</button>
       </form>

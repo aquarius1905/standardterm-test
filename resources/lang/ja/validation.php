@@ -114,7 +114,7 @@ return [
     'size'                 => [
         'numeric' => ':attributeは:sizeを指定してください。',
         'file'    => ':attributeのファイルは、:sizeキロバイトでなくてはなりません。',
-        'string'  => ':attributeは:size文字で指定してください。',
+        'string'  => ':attributeは:size文字で入力してください',
         'array'   => ':attributeは:size個指定してください。',
     ],
     'starts_with'          => ':attributeには、:valuesのどれかで始まる値を指定してください。',

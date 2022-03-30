@@ -28,7 +28,7 @@ class ContactRequest extends FormRequest
             'firstname' => 'required',
             'gender' => 'required',
             'email' => 'required|email',
-            'postcode' => 'required|regex:/^[0-9]{3}-[0-9]{4}$/',
+            'postcode' => 'required|size:8|regex:/^[0-9]{3}-[0-9]{4}$/',
             'address' => 'required',
             'opinion' => 'required|max:120'
         ];
